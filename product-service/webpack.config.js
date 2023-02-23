@@ -1,7 +1,7 @@
 const path = require('path');
 const slsw = require('serverless-webpack');
 const nodeExternals = require('webpack-node-externals');
-const TSLintPlugin = require('tslint-webpack-plugin');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 module.exports = {
     context: __dirname,
@@ -12,6 +12,11 @@ module.exports = {
         extensions: ['.mjs', '.js', '.json', '.ts'],
         symlinks: false,
         cacheWithContext: false,
+        plugins: [
+            new TsconfigPathsPlugin({
+                configFile: './tsconfig.paths.json',
+            }),
+        ],
     },
     output: {
         libraryTarget: 'commonjs',
@@ -40,13 +45,5 @@ module.exports = {
             },
         ],
     },
-    plugins: [
-        new TSLintPlugin({
-            files: ['./src/**.ts', './src/**.js', './test/**.test.ts'],
-            test: true,
-            typeCheck: true,
-            force: false,
-            init: false
-        })
-    ],
+    plugins: [],
 };
