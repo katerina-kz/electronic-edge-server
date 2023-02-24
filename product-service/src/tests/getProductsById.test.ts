@@ -17,7 +17,10 @@ describe('Unit test for getProductsById file', () => {
             })
             .expectResult(result => {
                 expect(result.statusCode).toBe(200);
-                expect(result.body).toEqual(JSON.stringify(products[2]));
+                expect(result.body).toEqual(JSON.stringify({
+                    product: { ...products[2] }
+                }
+                ));
             });
     });
 

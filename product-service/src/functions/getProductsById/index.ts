@@ -1,8 +1,10 @@
-import { default as products } from "../../products.json";
+import  products from "../../products.json";
 import { formatJSONResponse, ValidatedEventAPIGatewayProxyEvent } from "@libs/api-gateway";
 import { Product } from "../../models/types";
 
-export const getProductsById: ValidatedEventAPIGatewayProxyEvent<any> = async (event) => {
+import schema from "@functions/getProductsById/schema";
+
+export const getProductsById: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (event) => {
     const headers = {
         "Access-Control-Allow-Headers": "Content-Type",
         "Access-Control-Allow-Origin": "*",
@@ -11,17 +13,18 @@ export const getProductsById: ValidatedEventAPIGatewayProxyEvent<any> = async (e
 
     try {
         const { productId } = event.pathParameters;
+
         const product: Product = await products.find(prod => prod.id === productId);
 
         if (!product) {
             return formatJSONResponse({
                 message: "Product not found..."
-            }, 404);
+            }, 404, headers);
         }
-        return formatJSONResponse({ ...product }, 200, headers)
+        return formatJSONResponse({ product }, 200, headers)
     } catch (error) {
-        return formatJSONResponse( {
-            message: "Internal server error",
-        }, 500)
+        return formatJSONResponse({
+            message: error.message,
+        }, 500, headers);
     }
 };
