@@ -69,7 +69,7 @@ The project code base is mainly located within the `src` folder. This folder is 
 ├── src
 │   ├── functions               # Lambda configuration and source code folder
 │   │   ├── hello
-│   │   │   ├── getAllProducts.ts      # `Hello` lambda source code
+│   │   │   ├── products.ts      # `Hello` lambda source code
 │   │   │   ├── index.ts        # `Hello` lambda Serverless configuration
 │   │   │   ├── mock.json       # `Hello` lambda input parameter, if any, for local invocation
 │   │   │   └── schema.ts       # `Hello` lambda input event JSON-Schema

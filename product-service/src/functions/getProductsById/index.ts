@@ -1,15 +1,23 @@
-import  products from "../../products.json";
 import { formatJSONResponse, ValidatedEventAPIGatewayProxyEvent } from "@libs/api-gateway";
-import { Product } from "../../models/types";
 import schema from "@functions/getProductsById/schema";
 import { HEADERS } from "../../constants";
+import productService from "../../services/products";
+import { ProductWithID } from "../../models/types";
 
 export const getProductsById: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (event) => {
     try {
         const { productId } = event.pathParameters;
 
-        const product: Product = await products.find(prod => prod.id === productId);
+        const product: ProductWithID = await productService.getProductsById(productId);
+        // console.log('product', product);
 
+        // if(!!product) {
+        //     console.log(`getProductsById invoked with productId: ${event.pathParameters.productId}, the product is ${event.body}`)
+        //
+        //     return formatJSONResponse({
+        //         product,
+        //     });
+        // }
         if (!product) {
             return formatJSONResponse({
                 message: "Product not found..."
@@ -17,6 +25,7 @@ export const getProductsById: ValidatedEventAPIGatewayProxyEvent<typeof schema> 
         }
         return formatJSONResponse({ product }, 200, HEADERS)
     } catch (error) {
+        console.log(error)
         return formatJSONResponse({
             message: error.message,
         }, 500, HEADERS);
