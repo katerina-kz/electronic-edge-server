@@ -34,10 +34,23 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Body required in the request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Product"
+            }
+          }
+        ],
         "responses": {
-          "200": {
-            "description": "200 response"
+          "201": {
+            "description": "Successful Product response",
+            "schema": {
+              "$ref": "#/definitions/Product"
+            }
           }
         }
       }

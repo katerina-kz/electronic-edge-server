@@ -91,11 +91,11 @@ functions:
       - http:
           path: products
           method: post
-          bodyType:
-            title: true
-            description: true
-            price: true
-            count: true
+          bodyType: 'Product'
+          responses:
+            201:
+              description: 'Successful Product response'
+              bodyType: 'Product'
           cors:
             origin: '*'
             headers:
