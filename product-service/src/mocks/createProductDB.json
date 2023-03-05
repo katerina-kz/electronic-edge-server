@@ -1,0 +1,27 @@
+{
+    "AttributeDefinitions": [
+        {
+            "AttributeName": "id",
+            "AttributeType": "S"
+        },
+        {
+            "AttributeName": "title",
+            "AttributeType": "S"
+        }
+    ],
+    "ProvisionedThroughput": {
+        "WriteCapacityUnits": 5,
+        "ReadCapacityUnits": 5
+    },
+    "TableName": "products",
+    "KeySchema": [
+        {
+            "KeyType": "HASH",
+            "AttributeName": "id"
+        },
+        {
+            "KeyType": "RANGE",
+            "AttributeName": "title"
+        }
+    ]
+}

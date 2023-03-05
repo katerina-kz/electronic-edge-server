@@ -11,7 +11,6 @@ provider:
     PG_DATABASE: ${env:PG_DATABASE}
     PG_USERNAME: ${env:PG_USERNAME}
     PG_PASSWORD: ${env:PG_PASSWORD}
-    TABLE_NAME_PTODUCTS: ${env:TABLE_NAME_PTODUCTS}
 
 useDotenv: true
 
@@ -43,6 +42,9 @@ custom:
 functions:
   getProductsList:
     handler: handler.getProductsList
+    environment:
+      TABLE_PRODUCTS: products
+      TABLE_STOCKS: stocks
     events:
       - http:
           path: products
@@ -59,6 +61,9 @@ functions:
             allowCredentials: false
   getProductsById:
     handler: handler.getProductsById
+    environment:
+      TABLE_PRODUCTS: products
+      TABLE_STOCKS: stocks
     events:
       - http:
           path: products/{productId}
@@ -79,10 +84,18 @@ functions:
             allowCredentials: false
   createProduct:
     handler: handler.createProduct
+    environment:
+      TABLE_PRODUCTS: products
+      TABLE_STOCKS: stocks
     events:
       - http:
           path: products
           method: post
+          bodyType:
+            title: true
+            description: true
+            price: true
+            count: true
           cors:
             origin: '*'
             headers:

@@ -1,0 +1,23 @@
+[
+    {
+        "TableName": "stocks",
+        "Item": {
+            "product_id": "1dc8644d-4e2c-4a94-b439-6f68f5809815",
+            "count": "10"
+        }
+    },
+    {
+        "TableName": "stocks",
+        "Item": {
+            "product_id": "03d074ce-9287-4661-8531-08d8d31ddc9a",
+            "count": "5"
+        }
+    },
+    {
+        "TableName": "stocks",
+        "Item": {
+            "product_id": "f06b7c4b-6f02-4a24-9a88-38f2e6d8a6f1",
+            "count": "3"
+        }
+    }
+]

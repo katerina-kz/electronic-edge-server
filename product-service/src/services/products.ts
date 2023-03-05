@@ -15,8 +15,11 @@ class ProductService {
             dbClient = await createConnectionClient();
             const result = await dbClient.query(GET_PRODUCTS_LIST_QUERY);
 
+            console.log('getProductsListResult ', result);
             return result.rows;
         } catch (err) {
+            await dbClient.query('ROLLBACK');
+            console.log('ROLLBACK', err);
             throw new Error(err)
         } finally {
             dbClient?.end();
@@ -30,8 +33,12 @@ class ProductService {
             dbClient = await createConnectionClient();
             const result = await dbClient.query(GET_PRODUCT_BY_ID_QUERY,[id]);
 
+            console.log('getProductsByIdResult ', result);
+
             return result.rows.length ? result.rows[0] : null;
         } catch (err) {
+            await dbClient.query('ROLLBACK');
+            console.log('ROLLBACK', err);
             throw new Error(err)
         } finally {
             dbClient?.end();
@@ -50,10 +57,8 @@ class ProductService {
                 [product.title, product.price, product.description]
             );
             const [ productItem ] = productCreateResult.rows;
-            console.log('productCreateResult',productItem);
-
-
-            console.log('Added product with id', productItem.id);
+            console.log('productCreateResult ', productItem);
+            console.log('Added product with id ', productItem.id);
 
             const stockCreateResult = await dbClient.query(
                 CREATE_STOCK_QUERY,
@@ -65,7 +70,7 @@ class ProductService {
             return { ...productItem, count: product.count};
         } catch (error) {
             await dbClient.query('ROLLBACK');
-            console.log('ROLLBACK',error);
+            console.log('ROLLBACK', error);
         } finally {
             dbClient?.end();
         }
