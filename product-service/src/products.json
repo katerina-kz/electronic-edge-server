@@ -1,0 +1,58 @@
+[
+    {
+      "count": 3,
+      "description": "The health tech product company Withings won three Innovation Honoree awards at CES 2022 for its Body Scan system. Body Scan is a smart scale with a retractable handle that uses sensors and electrodes to monitor body composition, vascular age, and heart rate. The associated app will allow access to medical professionals and personalized health goal plans and will collect feedback on nutrition, sleep, exercise, and stress management. Body Scan will be released in the second half of 2022, pending CD/FDA clearance",
+      "id": "1",
+      "price": 250,
+      "title": "Body Scan – Withings",
+      "logo": "https://www.tomorrowsworldtoday.com/wp-content/uploads/2022/01/image1-4.jpg"
+    },
+    {
+      "count": 2,
+      "description": "From KOHLER, PerfectFill will take baths to the next level. It is a smart bathing system that integrates a smart drain, digital/app controller, and bath filler. This means that it can fill a tub at the ideal temperature and fill level via voice control or app. The addition of the smart drain, the first of its kind, allows for the bath experience to be fully automated. When PerfectFill becomes available by the end of 2022, it will be sold as a drain kit that can be paired with a KOHLER digital valve, spout, and bath. ",
+      "id": "2",
+      "price": 100,
+      "title": "PerfectFill – KOHLER",
+      "logo": "https://www.tomorrowsworldtoday.com/wp-content/uploads/2022/01/use.jpg"
+    },
+    {
+      "count": 1,
+      "description": "In Samsung’s newest line of appliances comes the Bespoke French Door refrigerator with Family Hub. Available in 3- or 4-door style, 12 different colors, and 2 different finishes, the Bespoke French Door refrigerator comes with the latest storage and cooling innovations like the dual auto ice maker to give quick access to cool drinks. Additionally, the Family Hub in the fridge supports Samsung TVPlus and Alexa-enabled devices that can even reorder items from their fridge. The fridge, available later this year, also includes an upgraded internal camera that allows users to view their fridge contents and manage expiration dates.",
+      "id": "3",
+      "price": 1400,
+      "title": "Bespoke French-Door Refrigerator – Samsung",
+      "logo": "https://www.tomorrowsworldtoday.com/wp-content/uploads/2022/01/image3-3.jpg"
+    },
+    {
+      "count": 20,
+      "description": "Health tech for women has largely been ignored; startup Movano wants to change that with their Movano ring, focused on women’s health. The stylish ring measures a user’s heart rate, temperature, SpO2, calories consumed, blood oxygen, steps taken, and more. Movano takes health a step further by giving users actionable insights so they can make short- and long-term changes. If Movano can secure FDA approval, the ring could collect data needed to monitor glucose and blood pressure which are necessary measurements for two of the biggest killers globally—diabetes and heart disease. The beta version of the Movano ring is expected to be released towards the end of 2022. ",
+      "id": "4",
+      "price": 50,
+      "title": "Movano Ring – Movano",
+      "logo": "https://www.tomorrowsworldtoday.com/wp-content/uploads/2022/01/image4-1.jpg"
+    },
+    {
+      "count": 10,
+      "description": "In light of the growing smart home and security industry, Schlage is releasing smart door locks in the spring of 2022. This Encode Plus Smart Wifi Deadbolt allows you to lock, unlock, and monitor lock activity with an app. For the first time in the US, this smart lock will support Apple’s home keys for iPhone or Apple Watch, meaning users don’t even need to unlock their devices to unlock their doors. The new lock will also work with Siri, Alexa, Google Assistant, and the Schlage Home app.",
+      "id": "5",
+      "price": 15,
+      "title": "Encode Plus Smart WiFi Deadbolt – Schlage",
+      "logo": "https://www.tomorrowsworldtoday.com/wp-content/uploads/2022/01/image5.jpg"
+    },
+    {
+      "count": 8,
+      "description": "For a sustainable and innovative product coming out in 2022, Samsung’s Eco Remote is made with a recycled material design and can be charged through harnessing Radio Frequency waves or by solar charging. This means that the remote can draw power from the sun during the day but can also pull small amounts of power through radio waves, allowing the remote to be fully charged during the day and night. Samsung previously estimated that switching to solar-powered remotes could avoid 99 million discarded batteries over the course of seven years, and this new remote will add to this number. The Eco Remote will be included with the purchase of all of Samsung’s 2022 TVs.",
+      "id": "6",
+      "price": 15,
+      "title": "Eco Remote – Samsung",
+      "logo": "https://www.tomorrowsworldtoday.com/wp-content/uploads/2022/01/image6.jpg"
+    },
+    {
+      "count": 25,
+      "description": "Are you often losing your backpack? Laptop and computing accessory brand Targus unveiled a new bag with built-in location tracking. By using Apple Find My Technology, the Cypress Hero Backpack can be located from anywhere using the Find My app. More likely to misplace your phone? The backpack can track your lost phone as well!. What makes this backpack even better is its sustainability—each pack is made from 26 plastic bottles. The backpack will be available in the spring or summer of 2022.",
+      "id": "7",
+      "price": 200,
+      "title": "Cypress Hero Backpack – Targus",
+      "logo": "https://www.tomorrowsworldtoday.com/wp-content/uploads/2022/01/image7.jpg"
+    }
+]
