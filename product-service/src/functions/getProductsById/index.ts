@@ -12,7 +12,7 @@ export const getProductsById: ValidatedEventAPIGatewayProxyEvent<typeof schema> 
         // const product = await dynamoProducts.getProductById(productId) // DYNAMODB
         const product: ProductWithID = await productService.getProductsById(productId); // RDS
 
-        if (!!product) {
+        if (!product) {
             console.log(`getProductsById invoked with productId: ${event.pathParameters.productId}, the product not found`)
             return formatJSONResponse({
                 message: "Product not found..."
