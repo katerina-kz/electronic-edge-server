@@ -1,0 +1,27 @@
+{
+    "AttributeDefinitions": [
+        {
+            "AttributeName": "product_id",
+            "AttributeType": "S"
+        },
+        {
+            "AttributeName": "count",
+            "AttributeType": "S"
+        }
+    ],
+    "ProvisionedThroughput": {
+        "WriteCapacityUnits": 5,
+        "ReadCapacityUnits": 5
+    },
+    "TableName": "stocks",
+    "KeySchema": [
+        {
+            "KeyType": "HASH",
+            "AttributeName": "product_id"
+        },
+        {
+            "KeyType": "RANGE",
+            "AttributeName": "count"
+        }
+    ]
+}

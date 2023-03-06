@@ -38,10 +38,6 @@ module.exports = {
                         path.resolve(__dirname, '.webpack'),
                     ],
                 ],
-                options: {
-                    transpileOnly: true,
-                    experimentalWatchApi: true,
-                },
             },
         ],
     },

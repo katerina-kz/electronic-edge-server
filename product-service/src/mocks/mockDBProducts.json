@@ -1,0 +1,29 @@
+[
+    {
+        "TableName": "products",
+        "Item": {
+            "id": "1dc8644d-4e2c-4a94-b439-6f68f5809815",
+            "title": "Body Scan – Withings",
+            "description": "The health tech product company Withings won three Innovation Honoree awards at CES 2022 for its Body Scan system. Body Scan is a smart scale with a retractable handle that uses sensors and electrodes to monitor body composition, vascular age, and heart rate. The associated app will allow access to medical professionals and personalized health goal plans and will collect feedback on nutrition, sleep, exercise, and stress management. Body Scan will be released in the second half of 2022, pending CD/FDA clearance",
+            "price": "250"
+        }
+    },
+    {
+        "TableName": "products",
+        "Item": {
+            "id": "03d074ce-9287-4661-8531-08d8d31ddc9a",
+            "title": "PerfectFill – KOHLER",
+            "description": "From KOHLER, PerfectFill will take baths to the next level. It is a smart bathing system that integrates a smart drain, digital/app controller, and bath filler. This means that it can fill a tub at the ideal temperature and fill level via voice control or app. The addition of the smart drain, the first of its kind, allows for the bath experience to be fully automated. When PerfectFill becomes available by the end of 2022, it will be sold as a drain kit that can be paired with a KOHLER digital valve, spout, and bath. ",
+            "price": "100"
+        }
+    },
+    {
+        "TableName": "products",
+        "Item": {
+            "id": "f06b7c4b-6f02-4a24-9a88-38f2e6d8a6f1",
+            "title": "The Big Book",
+            "description": "In Samsung’s newest line of appliances comes the Bespoke French Door refrigerator with Family Hub. Available in 3- or 4-door style, 12 different colors, and 2 different finishes, the Bespoke French Door refrigerator comes with the latest storage and cooling innovations like the dual auto ice maker to give quick access to cool drinks. Additionally, the Family Hub in the fridge supports Samsung TVPlus and Alexa-enabled devices that can even reorder items from their fridge. The fridge, available later this year, also includes an upgraded internal camera that allows users to view their fridge contents and manage expiration dates.",
+            "price": "1400"
+        }
+    }
+]

@@ -5,6 +5,14 @@ provider:
   runtime: nodejs16.x
   stage: dev
   region: us-east-1
+  environment:
+    PG_HOST: ${env:PG_HOST}
+    PG_PORT: ${env:PG_PORT}
+    PG_DATABASE: ${env:PG_DATABASE}
+    PG_USERNAME: ${env:PG_USERNAME}
+    PG_PASSWORD: ${env:PG_PASSWORD}
+
+useDotenv: true
 
 plugins:
   - serverless-auto-swagger
@@ -34,6 +42,9 @@ custom:
 functions:
   getProductsList:
     handler: handler.getProductsList
+    environment:
+      TABLE_PRODUCTS: products
+      TABLE_STOCKS: stocks
     events:
       - http:
           path: products
@@ -50,6 +61,9 @@ functions:
             allowCredentials: false
   getProductsById:
     handler: handler.getProductsById
+    environment:
+      TABLE_PRODUCTS: products
+      TABLE_STOCKS: stocks
     events:
       - http:
           path: products/{productId}
@@ -58,6 +72,30 @@ functions:
             parameters:
               paths:
                 productId: true
+          cors:
+            origin: '*'
+            headers:
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+              - X-Amz-User-Agent
+            allowCredentials: false
+  createProduct:
+    handler: handler.createProduct
+    environment:
+      TABLE_PRODUCTS: products
+      TABLE_STOCKS: stocks
+    events:
+      - http:
+          path: products
+          method: post
+          bodyType: 'Product'
+          responses:
+            201:
+              description: 'Successful Product response'
+              bodyType: 'Product'
           cors:
             origin: '*'
             headers:

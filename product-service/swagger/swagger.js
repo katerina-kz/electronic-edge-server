@@ -23,6 +23,36 @@
             "description": "200 response"
           }
         }
+      },
+      "post": {
+        "summary": "createProduct",
+        "description": "",
+        "operationId": "createProduct.post.products",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Body required in the request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Product"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Successful Product response",
+            "schema": {
+              "$ref": "#/definitions/Product"
+            }
+          }
+        }
       }
     },
     "/products/{productId}": {
@@ -53,12 +83,46 @@
     }
   },
   "definitions": {
-    "Product": {
+    "ProductWithID": {
       "properties": {
         "id": {
-          "title": "Product.id",
+          "title": "ProductWithID.id",
           "type": "string"
         },
+        "title": {
+          "title": "ProductWithID.title",
+          "type": "string"
+        },
+        "description": {
+          "title": "ProductWithID.description",
+          "type": "string"
+        },
+        "price": {
+          "title": "ProductWithID.price",
+          "type": "number"
+        },
+        "count": {
+          "title": "ProductWithID.count",
+          "type": "number"
+        },
+        "logo": {
+          "title": "ProductWithID.logo",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "description",
+        "price",
+        "count"
+      ],
+      "additionalProperties": false,
+      "title": "ProductWithID",
+      "type": "object"
+    },
+    "Product": {
+      "properties": {
         "title": {
           "title": "Product.title",
           "type": "string"
@@ -81,12 +145,10 @@
         }
       },
       "required": [
-        "id",
         "title",
         "description",
         "price",
-        "count",
-        "logo"
+        "count"
       ],
       "additionalProperties": false,
       "title": "Product",
