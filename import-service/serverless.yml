@@ -1,0 +1,46 @@
+service: import-service
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+  stage: dev
+  region: us-east-1
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - s3:ListBucket
+      Resource: arn:aws:s3:::electronic-shop-service-files
+    - Effect: Allow
+      Action:
+        - s3:*
+      Resource: arn:aws:s3:::electronic-shop-service-files/*
+
+plugins:
+  - serverless-webpack
+
+custom:
+  webpack:
+    webpackConfig: 'webpack.config.js'
+    includeModules: true
+
+functions:
+  importProductsFile:
+    handler: handler.importProductsFile
+    events:
+      - http:
+          path: /import
+          method: get
+          request:
+            parameters:
+              querystrings:
+                name: true
+          cors: true
+  importFileParser:
+    handler: handler.importFileParser
+    events:
+      - s3:
+          bucket: electronic-shop-service-files
+          event: s3:ObjectCreated:*
+          rules:
+            - prefix: uploaded/
+          existing: true
