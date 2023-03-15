@@ -4,7 +4,7 @@ import { REGION, STATUS_CODE_ENUM } from "../../utils/constants";
 import { formatJSONResponse } from "@libs/api-gateway";
 
 export const importFileParser = async (event) => {
-    const s3 = new AWS.S3({ region: REGION.east_1 });
+    const s3 = new AWS.S3({ region: REGION });
     const sqs = new AWS.SQS();
 
     console.log('importFileParser invoked with event: ', event);

@@ -7,10 +7,7 @@ export const HEADERS = {
 
 export const BUCKET_NAME = "electronic-shop-service-files";
 
-export enum REGION {
-    east_1 = "us-east-1",
-    west_2 = "us-west-2"
-}
+export const REGION = "us-east-1";
 
 export enum S3_IMPORT_FOLDERS_ENUM {
     Uploaded = "uploaded",

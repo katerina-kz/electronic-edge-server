@@ -1,4 +1,3 @@
-// import parse from "csv-parser";
 import csv from "csv-parser";
 import { S3_IMPORT_FOLDERS_ENUM } from "../../utils/constants";
 
@@ -71,7 +70,6 @@ class ImportService {
     };
 
     async sendMessageToSQS (sqs, messageBody) {
-        console.log("PORT", process.env.SQS_URL)
         await sqs.sendMessage(
             {
                 QueueUrl: process.env.SQS_URL,

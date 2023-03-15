@@ -26,9 +26,9 @@ export const catalogBatchProcess = async (event) => {
             }, STATUS_CODE_ENUM.NotFound, HEADERS);
         }
 
-        // for (const product of products) {
-        //     await productService.createProduct(JSON.parse(product));
-        // }
+        for (const product of products) {
+            await productService.createProduct(JSON.parse(product));
+        }
         console.log("products created", products.length);
 
         await productService.publishProducts(products, sns);

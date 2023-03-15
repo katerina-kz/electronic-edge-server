@@ -27,14 +27,6 @@ provider:
       Action: sns:*
       Resource:
         Ref: SNSTopic
-#    - Effect: Allow
-#      Action: sqs:*
-#      Resource:
-#        - Fn::ImportValue: CatalogItemsQueueArnId
-#    - Effect: Allow
-#      Action: sns:*
-#      Resource:
-#        Ref: createProductTopic
 
 useDotenv: true
 
@@ -128,31 +120,7 @@ functions:
           arn:
             Fn::GetAtt: [SQSQueue, Arn]
 
-#resources:
-#  Resources:
-#    createProductTopic:
-#      Type: AWS::SNS::Topic
-#      Properties:
-#        TopicName: createProductTopic
-#    createProductSubscription:
-#      Type: AWS::SNS::Subscription
-#      Properties:
-#        Endpoint: ${env:SUBSCRIPTON_EMAIL}
-#        Protocol: email
-#        TopicArn:
-#          Ref: createProductTopic
-#    createAllExpensiveProductSubscription:
-#      Type: AWS::SNS::Subscription
-#      Properties:
-#        Endpoint: ${env:SUBSCRIPTON_EMAIL}
-#        Protocol: email
-#        TopicArn:
-#          Ref: createProductTopic
-#        FilterPolicy:
-#          price: [{ "numeric": [">=", 100] }]
-
 resources:
-
   Resources:
     SQSQueue:
       Type: AWS::SQS::Queue

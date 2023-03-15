@@ -81,7 +81,6 @@ class ProductService {
 
             const productsData = products.map(data => JSON.parse(data));
             const minPrice = Math.min(...productsData.map(p => p.price));
-            console.log(process.env)
             sns.publish(
                 {
                     Subject: 'New product has been created',

@@ -12,7 +12,7 @@ export const importProductsFile = async (event) => {
             }, STATUS_CODE_ENUM.NotFound)
         }
 
-        const s3 = new AWS.S3({ region: REGION.east_1 });
+        const s3 = new AWS.S3({ region: REGION });
         const params = {
             Bucket: BUCKET_NAME,
             Key: `${S3_IMPORT_FOLDERS_ENUM.Uploaded}/${name}`,
