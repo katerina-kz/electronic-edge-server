@@ -1,5 +1,5 @@
 import AWS from "aws-sdk";
-import {BUCKET_NAME, REGION, S3_IMPORT_FOLDERS_ENUM, STATUS_CODE_ENUM} from "../../utils/constants";
+import { BUCKET_NAME, REGION, S3_IMPORT_FOLDERS_ENUM, STATUS_CODE_ENUM } from "../../utils/constants";
 import { formatJSONResponse } from "@libs/api-gateway";
 
 export const importProductsFile = async (event) => {
@@ -12,7 +12,7 @@ export const importProductsFile = async (event) => {
             }, STATUS_CODE_ENUM.NotFound)
         }
 
-        const s3 = new AWS.S3({ region: REGION });
+        const s3 = new AWS.S3({ region: REGION.east_1 });
         const params = {
             Bucket: BUCKET_NAME,
             Key: `${S3_IMPORT_FOLDERS_ENUM.Uploaded}/${name}`,

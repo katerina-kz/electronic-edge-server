@@ -1,6 +1,6 @@
 # Swagger link
 
-[Swagger](https://54rm9ozt53.execute-api.us-east-1.amazonaws.com/swagger)
+[Swagger](https://zwjfj793x6.execute-api.us-east-1.amazonaws.com/swagger)
 
 # Serverless - AWS Node.js Typescript
 

@@ -5,8 +5,12 @@ export const HEADERS = {
     'Content-Type': 'application/json',
 };
 
-export const REGION = "us-east-1";
 export const BUCKET_NAME = "electronic-shop-service-files";
+
+export enum REGION {
+    east_1 = "us-east-1",
+    west_2 = "us-west-2"
+}
 
 export enum S3_IMPORT_FOLDERS_ENUM {
     Uploaded = "uploaded",

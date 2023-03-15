@@ -1,9 +1,11 @@
 import AWS from "aws-sdk";
-import { REGION } from "../../utils/constants";
 import importService from "../services/import";
+import { REGION, STATUS_CODE_ENUM } from "../../utils/constants";
+import { formatJSONResponse } from "@libs/api-gateway";
 
 export const importFileParser = async (event) => {
-    const s3 = new AWS.S3({ region: REGION });
+    const s3 = new AWS.S3({ region: REGION.east_1 });
+    const sqs = new AWS.SQS();
 
     console.log('importFileParser invoked with event: ', event);
 
@@ -15,7 +17,8 @@ export const importFileParser = async (event) => {
 
         try {
             const s3Object = await importService.getObject(s3, bucketName, objectKey);
-            await importService.createReadStream(s3Object);
+
+            await importService.createReadStream(s3Object, sqs);
             await importService.copyObject(s3, bucketName, objectKey);
             await importService.deleteObject(s3, bucketName, objectKey);
 
@@ -26,6 +29,9 @@ export const importFileParser = async (event) => {
                 );
         } catch (error) {
             console.log("Lambda importFileParser moving files error: ", error);
+            return formatJSONResponse({
+                message: error.message,
+            }, STATUS_CODE_ENUM.ServerError);
         }
     }
 }
