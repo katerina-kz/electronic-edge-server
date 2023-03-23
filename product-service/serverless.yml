@@ -5,12 +5,28 @@ provider:
   runtime: nodejs16.x
   stage: dev
   region: us-east-1
+
   environment:
     PG_HOST: ${env:PG_HOST}
     PG_PORT: ${env:PG_PORT}
     PG_DATABASE: ${env:PG_DATABASE}
     PG_USERNAME: ${env:PG_USERNAME}
     PG_PASSWORD: ${env:PG_PASSWORD}
+    SQS_URL: SQSQueue
+    CREATE_PRODUCT_TOPIC_ARN:
+      Ref: SNSTopic
+
+  iamRoleStatements:
+    - Effect: Allow
+      Action: sns:*
+      Resource:
+        - Fn::GetAtt:
+          - SQSQueue
+          - Arn
+    - Effect: Allow
+      Action: sns:*
+      Resource:
+        Ref: SNSTopic
 
 useDotenv: true
 
@@ -28,16 +44,6 @@ custom:
     typefiles: [ './src/models/types.ts' ]
     title: 'product-service'
     host: 'o3kxai97f3.execute-api.us-east-1.amazonaws.com/dev'
-#    swaggerFiles: [ './src/products.json',  ]
-#    swaggerPath: 'string'
-#    apiKeyHeaders: [ "Access-Control-Allow-Origin", "Access-Control-Allow-Headers", "Access-Control-Allow-Methods" ]
-#    useStage: true | false
-#    basePath: '/string'
-#    schemes: [ 'http', 'https', 'ws', 'wss' ]
-#    excludeStages: [ 'production', 'anyOtherStage' ]
-#    lambdaAuthorizer: ${self:custom.myAuthorizer}
-#    useRedirectUI: true | false
-
 
 functions:
   getProductsList:
@@ -106,3 +112,44 @@ functions:
               - X-Amz-Security-Token
               - X-Amz-User-Agent
             allowCredentials: false
+  catalogBatchProcess:
+    handler: handler.catalogBatchProcess
+    events:
+      - sqs:
+          batchSize: 5
+          arn:
+            Fn::GetAtt: [SQSQueue, Arn]
+
+resources:
+  Resources:
+    SQSQueue:
+      Type: AWS::SQS::Queue
+      Properties:
+        QueueName: catalogItemsQueue
+    SNSTopic:
+      Type: AWS::SNS::Topic
+      Properties:
+        TopicName: createProductTopic
+    SNSSubscription:
+      Type: AWS::SNS::Subscription
+      Properties:
+        Protocol: email
+        Endpoint: ${env:SUBSCRIPTON_EMAIL1}
+        TopicArn:
+          Ref: SNSTopic
+    SNSExpensiveProductSubscription:
+      Type: AWS::SNS::Subscription
+      Properties:
+        Endpoint: ${env:SUBSCRIPTON_EMAIL2}
+        Protocol: email
+        TopicArn:
+          Ref: SNSTopic
+        FilterPolicy:
+          price: [{ "numeric": [">=", 100] }]
+
+  Outputs:
+    SQSQueueOutput:
+      Value:
+        Fn::GetAtt: [ SQSQueue, Arn ]
+      Export:
+        Name: SQSQueueOutput

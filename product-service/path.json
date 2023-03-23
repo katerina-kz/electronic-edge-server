@@ -1,3 +1,104 @@
 {
-    "queryStringParameters": "{\"name\": \"ololo.csv\"}"
+    "Records": [
+        {
+            "messageId": "3d70825e-af9e-4658-bca9-738be0362640",
+            "receiptHandle": "AQEBtI05hB5tgO3xLZUOipa6Wxz2gFgizfR9JoG9cCJJupNBDGfzf3Mr6KA1n09h0/2gXOu1njh6JZJbnUw8RV/cQzT2miTOfb3/SSh9KRrwIu35/wn/VditfsZdhLBJKG//SULutsUXj0nMC4ZmdSnD/qQY5XsZZD0uH+Z+wLxnu0uh1VV4TIT/Tad6WJxC99E2g1smOeO10e2jPtgjlhIJu1F8JkOrmuOFJ2Ryy0Cjx+xtopl1DVZfoYzyniG2VAlIvVIoJmKRTVcWeRX6o8hYzqMIQ0WsAOtOfWmgZzKMXEJsiEXhRU0nLRFElQ1XUep0Ii9vVDbrZAkqj0EDx6cqKXoDddBZRBVgrQLMTXNLBuP1w78dXAxLXp9/D/O1gj1s/hOS7iKNuYLQNsBtSFsVNQ==",
+            "body": "\"{\\\"title\\\":\\\"Sqs10\\\",\\\"description\\\":\\\"description\\\",\\\"price\\\":\\\"12\\\",\\\"count\\\":\\\"3\\\"}\"",
+            "attributes": {
+                "ApproximateReceiveCount": "1",
+                "AWSTraceHeader": "Root=1-6410d18b-5f602eff0e5b84ab26b3e64a;Parent=751e472243760659;Sampled=0",
+                "SentTimestamp": "1678823820032",
+                "SenderId": "AROAVL2KQLHMPBX7IIO62:import-service-dev-importFileParser",
+                "ApproximateFirstReceiveTimestamp": "1678823820036"
+            },
+            "messageAttributes": {},
+            "md5OfBody": "c6d1c9aec08399aaf8dc577feb78708e",
+            "eventSource": "aws:sqs",
+            "eventSourceARN": "arn:aws:sqs:us-east-1:368986577368:catalogItemsQueue",
+            "awsRegion": "us-east-1"
+        },
+        {
+            "messageId": "98a6def9-b75d-4267-a219-095a7d428d3a",
+            "receiptHandle": "AQEBGK+G4QO7n4bfe++8oeyzwJYIcmdZ8eRb+cTnmgzxnSEmUCNlatx18n5kGHQTJjC46g+CV9QroSG0WZveVumksEFLjGTP5u0gnj7BcS8br5+uJnIcLjZK8u2IqDgB5DEbPLGIsaX8alliC8N+LPSwMhAY7ib9Jrifchz9W26KmTdGe4tws/aMzEComphipUR60F4V0FeZMftJQRRl+K4NdI66CmB4vs3zzVOZ39bztxznnAGArBWV/ojUvfAw4211+1NgkYyp71de+4qldU0ZGavtZM5LNgARJfOcPd/KnQitUgf+VTJ/Rn8aIA7kzFK7KeJbfgNc3nUCzQSnn/5luR2xVN5odA+GbjVMhMLj5rILboW6ey4ljWhBnRPAx7HKkHFF6dtr4fzT9Fha9yD+WQ==",
+            "body": "\"{\\\"title\\\":\\\"Sqs11\\\",\\\"description\\\":\\\"description12344\\\",\\\"price\\\":\\\"1200\\\",\\\"count\\\":\\\"35\\\"}\"",
+            "attributes": {
+                "ApproximateReceiveCount": "1",
+                "AWSTraceHeader": "Root=1-6410d18b-5f602eff0e5b84ab26b3e64a;Parent=751e472243760659;Sampled=0",
+                "SentTimestamp": "1678823820023",
+                "SenderId": "AROAVL2KQLHMPBX7IIO62:import-service-dev-importFileParser",
+                "ApproximateFirstReceiveTimestamp": "1678823820025"
+            },
+            "messageAttributes": {},
+            "md5OfBody": "9bfdc45f5970cd122603172afc91d1e1",
+            "eventSource": "aws:sqs",
+            "eventSourceARN": "arn:aws:sqs:us-east-1:368986577368:catalogItemsQueue",
+            "awsRegion": "us-east-1"
+        },{
+            "messageId": "98a6def9-b75d-4267-a219-095a7d428d3a",
+            "receiptHandle": "AQEBGK+G4QO7n4bfe++8oeyzwJYIcmdZ8eRb+cTnmgzxnSEmUCNlatx18n5kGHQTJjC46g+CV9QroSG0WZveVumksEFLjGTP5u0gnj7BcS8br5+uJnIcLjZK8u2IqDgB5DEbPLGIsaX8alliC8N+LPSwMhAY7ib9Jrifchz9W26KmTdGe4tws/aMzEComphipUR60F4V0FeZMftJQRRl+K4NdI66CmB4vs3zzVOZ39bztxznnAGArBWV/ojUvfAw4211+1NgkYyp71de+4qldU0ZGavtZM5LNgARJfOcPd/KnQitUgf+VTJ/Rn8aIA7kzFK7KeJbfgNc3nUCzQSnn/5luR2xVN5odA+GbjVMhMLj5rILboW6ey4ljWhBnRPAx7HKkHFF6dtr4fzT9Fha9yD+WQ==",
+            "body": "\"{\\\"title\\\":\\\"Sqs12\\\",\\\"description\\\":\\\"description12344\\\",\\\"price\\\":\\\"1200\\\",\\\"count\\\":\\\"35\\\"}\"",
+            "attributes": {
+                "ApproximateReceiveCount": "1",
+                "AWSTraceHeader": "Root=1-6410d18b-5f602eff0e5b84ab26b3e64a;Parent=751e472243760659;Sampled=0",
+                "SentTimestamp": "1678823820023",
+                "SenderId": "AROAVL2KQLHMPBX7IIO62:import-service-dev-importFileParser",
+                "ApproximateFirstReceiveTimestamp": "1678823820025"
+            },
+            "messageAttributes": {},
+            "md5OfBody": "9bfdc45f5970cd122603172afc91d1e1",
+            "eventSource": "aws:sqs",
+            "eventSourceARN": "arn:aws:sqs:us-east-1:368986577368:catalogItemsQueue",
+            "awsRegion": "us-east-1"
+        },{
+            "messageId": "98a6def9-b75d-4267-a219-095a7d428d3a",
+            "receiptHandle": "AQEBGK+G4QO7n4bfe++8oeyzwJYIcmdZ8eRb+cTnmgzxnSEmUCNlatx18n5kGHQTJjC46g+CV9QroSG0WZveVumksEFLjGTP5u0gnj7BcS8br5+uJnIcLjZK8u2IqDgB5DEbPLGIsaX8alliC8N+LPSwMhAY7ib9Jrifchz9W26KmTdGe4tws/aMzEComphipUR60F4V0FeZMftJQRRl+K4NdI66CmB4vs3zzVOZ39bztxznnAGArBWV/ojUvfAw4211+1NgkYyp71de+4qldU0ZGavtZM5LNgARJfOcPd/KnQitUgf+VTJ/Rn8aIA7kzFK7KeJbfgNc3nUCzQSnn/5luR2xVN5odA+GbjVMhMLj5rILboW6ey4ljWhBnRPAx7HKkHFF6dtr4fzT9Fha9yD+WQ==",
+            "body": "\"{\\\"title\\\":\\\"Sqs13\\\",\\\"description\\\":\\\"description12344\\\",\\\"price\\\":\\\"1200\\\",\\\"count\\\":\\\"35\\\"}\"",
+            "attributes": {
+                "ApproximateReceiveCount": "1",
+                "AWSTraceHeader": "Root=1-6410d18b-5f602eff0e5b84ab26b3e64a;Parent=751e472243760659;Sampled=0",
+                "SentTimestamp": "1678823820023",
+                "SenderId": "AROAVL2KQLHMPBX7IIO62:import-service-dev-importFileParser",
+                "ApproximateFirstReceiveTimestamp": "1678823820025"
+            },
+            "messageAttributes": {},
+            "md5OfBody": "9bfdc45f5970cd122603172afc91d1e1",
+            "eventSource": "aws:sqs",
+            "eventSourceARN": "arn:aws:sqs:us-east-1:368986577368:catalogItemsQueue",
+            "awsRegion": "us-east-1"
+        },
+        {
+            "messageId": "98a6def9-b75d-4267-a219-095a7d428d3a",
+            "receiptHandle": "AQEBGK+G4QO7n4bfe++8oeyzwJYIcmdZ8eRb+cTnmgzxnSEmUCNlatx18n5kGHQTJjC46g+CV9QroSG0WZveVumksEFLjGTP5u0gnj7BcS8br5+uJnIcLjZK8u2IqDgB5DEbPLGIsaX8alliC8N+LPSwMhAY7ib9Jrifchz9W26KmTdGe4tws/aMzEComphipUR60F4V0FeZMftJQRRl+K4NdI66CmB4vs3zzVOZ39bztxznnAGArBWV/ojUvfAw4211+1NgkYyp71de+4qldU0ZGavtZM5LNgARJfOcPd/KnQitUgf+VTJ/Rn8aIA7kzFK7KeJbfgNc3nUCzQSnn/5luR2xVN5odA+GbjVMhMLj5rILboW6ey4ljWhBnRPAx7HKkHFF6dtr4fzT9Fha9yD+WQ==",
+            "body": "\"{\\\"title\\\":\\\"Sqs14\\\",\\\"description\\\":\\\"description12344\\\",\\\"price\\\":\\\"100\\\",\\\"count\\\":\\\"35\\\"}\"",
+            "attributes": {
+                "ApproximateReceiveCount": "1",
+                "AWSTraceHeader": "Root=1-6410d18b-5f602eff0e5b84ab26b3e64a;Parent=751e472243760659;Sampled=0",
+                "SentTimestamp": "1678823820023",
+                "SenderId": "AROAVL2KQLHMPBX7IIO62:import-service-dev-importFileParser",
+                "ApproximateFirstReceiveTimestamp": "1678823820025"
+            },
+            "messageAttributes": {},
+            "md5OfBody": "9bfdc45f5970cd122603172afc91d1e1",
+            "eventSource": "aws:sqs",
+            "eventSourceARN": "arn:aws:sqs:us-east-1:368986577368:catalogItemsQueue",
+            "awsRegion": "us-east-1"
+        },
+        {
+            "messageId": "98a6def9-b75d-4267-a219-095a7d428d3a",
+            "receiptHandle": "AQEBGK+G4QO7n4bfe++8oeyzwJYIcmdZ8eRb+cTnmgzxnSEmUCNlatx18n5kGHQTJjC46g+CV9QroSG0WZveVumksEFLjGTP5u0gnj7BcS8br5+uJnIcLjZK8u2IqDgB5DEbPLGIsaX8alliC8N+LPSwMhAY7ib9Jrifchz9W26KmTdGe4tws/aMzEComphipUR60F4V0FeZMftJQRRl+K4NdI66CmB4vs3zzVOZ39bztxznnAGArBWV/ojUvfAw4211+1NgkYyp71de+4qldU0ZGavtZM5LNgARJfOcPd/KnQitUgf+VTJ/Rn8aIA7kzFK7KeJbfgNc3nUCzQSnn/5luR2xVN5odA+GbjVMhMLj5rILboW6ey4ljWhBnRPAx7HKkHFF6dtr4fzT9Fha9yD+WQ==",
+            "body": "\"{\\\"title\\\":\\\"Sqs15\\\",\\\"description\\\":\\\"description12344\\\",\\\"price\\\":\\\"90\\\",\\\"count\\\":\\\"35\\\"}\"",
+            "attributes": {
+                "ApproximateReceiveCount": "1",
+                "AWSTraceHeader": "Root=1-6410d18b-5f602eff0e5b84ab26b3e64a;Parent=751e472243760659;Sampled=0",
+                "SentTimestamp": "1678823820023",
+                "SenderId": "AROAVL2KQLHMPBX7IIO62:import-service-dev-importFileParser",
+                "ApproximateFirstReceiveTimestamp": "1678823820025"
+            },
+            "messageAttributes": {},
+            "md5OfBody": "9bfdc45f5970cd122603172afc91d1e1",
+            "eventSource": "aws:sqs",
+            "eventSourceARN": "arn:aws:sqs:us-east-1:368986577368:catalogItemsQueue",
+            "awsRegion": "us-east-1"
+        }
+    ]
 }

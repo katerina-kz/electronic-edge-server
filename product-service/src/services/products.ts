@@ -75,6 +75,36 @@ class ProductService {
             dbClient?.end();
         }
     };
+
+    public async publishProducts (products, sns): Promise<Product> {
+        return new Promise((resolve, reject) => {
+
+            const productsData = products.map(data => JSON.parse(data));
+            const minPrice = Math.min(...productsData.map(p => p.price));
+            sns.publish(
+                {
+                    Subject: 'New product has been created',
+                    MessageAttributes: {
+                        price: {
+                            DataType: "Number",
+                            StringValue: `${minPrice}`
+                        }
+                    },
+                    Message: JSON.stringify(products),
+                    TopicArn: process.env.CREATE_PRODUCT_TOPIC_ARN,
+                },
+                (err, data) => {
+                    if (err) {
+                        console.log("publishProducts func invoke with ERROR: ", err)
+                        reject(err);
+                    } else {
+                        console.log("publishProducts func invoke SUCCESSFULLY with DATA: ", data)
+                        resolve(data);
+                    }
+                }
+            );
+        }
+    )};
 }
 
 export default new ProductService();

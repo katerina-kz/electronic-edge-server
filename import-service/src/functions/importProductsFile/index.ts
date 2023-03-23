@@ -1,5 +1,5 @@
 import AWS from "aws-sdk";
-import {BUCKET_NAME, REGION, S3_IMPORT_FOLDERS_ENUM, STATUS_CODE_ENUM} from "../../utils/constants";
+import { BUCKET_NAME, REGION, S3_IMPORT_FOLDERS_ENUM, STATUS_CODE_ENUM } from "../../utils/constants";
 import { formatJSONResponse } from "@libs/api-gateway";
 
 export const importProductsFile = async (event) => {
