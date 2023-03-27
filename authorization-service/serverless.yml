@@ -1,0 +1,30 @@
+service: autorization-service
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+  stage: dev
+  region: us-east-1
+  environment:
+    katerina_kz: ${env:katerina_kz}
+
+useDotenv: true
+
+plugins:
+  - serverless-webpack
+
+custom:
+  webpack:
+    webpackConfig: 'webpack.config.js'
+    includeModules: true
+
+functions:
+  basicAuthorizer:
+    handler: handler.basicAuthorizer
+
+resources:
+  Outputs:
+    basicAuthorizerArn:
+      Export:
+        Name: basicAuthorizerArnId
+      Value: !GetAtt BasicAuthorizerLambdaFunction.Arn
