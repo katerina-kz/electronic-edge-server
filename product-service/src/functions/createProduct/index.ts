@@ -1,9 +1,9 @@
 import { formatJSONResponse, ValidatedEventAPIGatewayProxyEvent } from "@libs/api-gateway";
-import productService from "../../services/products";
+// import productService from "../../services/products";
 import schema from "./schema";
 import { HEADERS, STATUS_CODE_ENUM } from "../../constants";
 import { createProductValidation } from "@functions/utils/validation";
-// import dynamoProducts from "../../services/dynamoProducts";
+import dynamoProducts from "../../services/dynamoProducts";
 
 export const createProduct: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (event) => {
     try {
@@ -19,8 +19,8 @@ export const createProduct: ValidatedEventAPIGatewayProxyEvent<typeof schema> = 
             }, STATUS_CODE_ENUM.BadRequest, HEADERS);
         }
 
-        // const product = await dynamoProducts.createProduct(data); // DYNAMODB
-        const product = await productService.createProduct(data); // RDS
+        const product = await dynamoProducts.createProduct(data); // DYNAMODB
+        // const product = await productService.createProduct(data); // RDS
 
         console.log(`createProduct invoked: ${new Date().toLocaleTimeString()} with result of ${JSON.stringify(product)}`)
         return formatJSONResponse({ product }, STATUS_CODE_ENUM.Created, HEADERS)

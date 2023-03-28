@@ -1,16 +1,16 @@
 import { formatJSONResponse, ValidatedEventAPIGatewayProxyEvent } from "@libs/api-gateway";
 import schema from "@functions/getProductsById/schema";
 import { HEADERS, STATUS_CODE_ENUM } from "../../constants";
-import productService from "../../services/products";
-import { ProductWithID } from "../../models/types";
-// import dynamoProducts from "../../services/dynamoProducts";
+// import productService from "../../services/products";
+// import { ProductWithID } from "../../models/types";
+import dynamoProducts from "../../services/dynamoProducts";
 
 export const getProductsById: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (event) => {
     try {
         const { productId } = event.pathParameters;
 
-        // const product = await dynamoProducts.getProductById(productId) // DYNAMODB
-        const product: ProductWithID = await productService.getProductsById(productId); // RDS
+        const product = await dynamoProducts.getProductById(productId) // DYNAMODB
+        // const product: ProductWithID = await productService.getProductsById(productId); // RDS
 
         if (!product) {
             console.log(`getProductsById invoked with productId: ${event.pathParameters.productId}, the product not found`)

@@ -100,7 +100,7 @@ class DynamoProductsService {
                                 "id": generatedId,
                                 "title": title,
                                 "description": description,
-                                "price": price
+                                "price": price.toString(),
                             },
                             ConditionExpression: "attribute_not_exists(id)",
                         }
@@ -109,7 +109,7 @@ class DynamoProductsService {
                         Put: {
                             TableName: process.env.TABLE_STOCKS,
                             "Item": {
-                                "count": count,
+                                "count": count.toString(),
                                 "product_id": generatedId
                             },
                             ConditionExpression: "attribute_not_exists(product_id)",

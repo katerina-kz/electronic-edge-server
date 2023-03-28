@@ -18,6 +18,11 @@ provider:
 
   iamRoleStatements:
     - Effect: Allow
+      Action: dynamodb:*
+      Resource:
+        - "arn:aws:dynamodb:us-east-1:368986577368:table/products"
+        - "arn:aws:dynamodb:us-east-1:368986577368:table/stocks"
+    - Effect: Allow
       Action: sns:*
       Resource:
         - Fn::GetAtt:
@@ -114,6 +119,9 @@ functions:
             allowCredentials: false
   catalogBatchProcess:
     handler: handler.catalogBatchProcess
+    environment:
+      TABLE_PRODUCTS: products
+      TABLE_STOCKS: stocks
     events:
       - sqs:
           batchSize: 5

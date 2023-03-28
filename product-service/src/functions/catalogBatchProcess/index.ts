@@ -3,6 +3,7 @@ import { createProductValidation } from "@functions/utils/validation";
 import productService from "../../services/products";
 import { formatJSONResponse } from "@libs/api-gateway";
 import { HEADERS, REGION, STATUS_CODE_ENUM } from "../../constants";
+import dynamoProducts from "../../services/dynamoProducts";
 
 const sns = new SNS({region: REGION});
 
@@ -27,7 +28,8 @@ export const catalogBatchProcess = async (event) => {
         }
 
         for (const product of products) {
-            await productService.createProduct(JSON.parse(product));
+            await dynamoProducts.createProduct(JSON.parse(product));
+            // await productService.createProduct(JSON.parse(product));
         }
         console.log("products created", products.length);
 
